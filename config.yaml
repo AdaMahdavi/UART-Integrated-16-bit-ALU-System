@@ -1,0 +1,31 @@
+project: UART-Integrated 16-bit ALU System
+
+settings:
+  clk_frequency: 100_000_000   # Hz
+  baudrate: 19200              # bits per second
+  depth: 128                   # RAM depth
+
+alu:
+  opcode_map:
+    "00": Concatenation
+    "01": XOR
+    "10": AND
+    "11": XNOR
+  future_ops:
+    - ADD
+    - SUB
+    - SHIFT
+    - ROTATE
+    - MULTIPLY
+
+fsm:
+  transmitter: [Idle, Start, Sending, Stop, Idle]
+  receiver: [Idle, StartBit, Receiving, StopBit, Arithmetic, Idle]
+
+features:
+  - Modular, FSM-driven design
+  - Configurable baud rate and memory depth via generics
+  - UART-based asynchronous communication
+  - Expandable ALU with opcode-driven design for easy upgrades
+  - Built-in ALU for real-time data processing
+  - Memory storage for results with synchronous write mechanism

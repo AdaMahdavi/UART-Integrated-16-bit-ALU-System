@@ -97,4 +97,11 @@ The **Top Module** serves as the integration layer:
 ## Baud Rate and Timing
 - Baud rate: **19,200 bps** (default).  
 - Clock frequency: **100 MHz** (default).  
-- Derived **data rate** (ticks per bit):  
+- Derived **data rate** (ticks per bit):  data_rate = clk_frequency / baudrate ≈ 5208 cycles/bit
+
+---
+
+## Platforms & Toolchain
+- Originally implemented for **Xilinx Spartan-6 boards** using ISE.
+- Currently migrated to **Xilinx Vivado** targeting **Basys 3 (Artix-7)** for final implementation.
+- Design remains portable across Xilinx FPGA families with minor constraint adjustments.

@@ -1,0 +1,28 @@
+# VHDL/Verilog build artifacts
+*.o
+*.bin
+*.bit
+*.vcd
+*.wdb
+*.jou
+*.log
+*.str
+
+# Simulation output
+*.vvp
+*.fst
+*.ghw
+
+# ISE/Vivado specific
+*.xise
+*.xpr
+*.runs/
+*.cache/
+*.sim/
+*.hw/
+*.ip_user_files/
+*.xdc
+
+# OS clutter
+.DS_Store
+Thumbs.db
