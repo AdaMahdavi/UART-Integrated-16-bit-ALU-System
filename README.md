@@ -10,6 +10,14 @@ The purpose of the system is to:
 
 ---
 
+## RTL Architecture
+The system is modular, with clear boundaries between communication, processing, and storage.  
+The figure below shows the RTL schematic for the **Top Module**:
+
+![RTL Schematic of Top Module](docs/RTL_topModule.png)
+
+---
+
 ## Top Module
 The **Top Module** serves as the integration layer:
 - Connects the **Transmitter** output to the **Receiver-ALU** input through the `tx_rx` line.  
@@ -97,11 +105,17 @@ The **Top Module** serves as the integration layer:
 ## Baud Rate and Timing
 - Baud rate: **19,200 bps** (default).  
 - Clock frequency: **100 MHz** (default).  
-- Derived **data rate** (ticks per bit):  data_rate = clk_frequency / baudrate ≈ 5208 cycles/bit
+- Derived **data rate** (ticks per bit): data_rate = clk_frequency / baudrate ≈ 5208 cycles/bit
 
 ---
 
 ## Platforms & Toolchain
-- Originally implemented for **Xilinx Spartan-6 boards** using ISE.
-- Currently migrated to **Xilinx Vivado** targeting **Basys 3 (Artix-7)** for final implementation.
-- Design remains portable across Xilinx FPGA families with minor constraint adjustments.
+- Originally implemented for **Xilinx Spartan-6 boards** using ISE.  
+- Currently migrated to **Xilinx Vivado** targeting **Basys 3 (Artix-7)** for final implementation.  
+- Design remains portable across Xilinx FPGA families with minor constraint adjustments.  
+
+---
+
+## Testbenches
+Extensive testbenches were written for each module and for the integrated system.  
+See [`tb/README.md`](tb/README.md) for details on methodology and waveforms.
